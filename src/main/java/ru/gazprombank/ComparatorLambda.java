@@ -11,9 +11,6 @@ public class ComparatorLambda {
             @Override
             public int compare(final Integer o1, final Integer o2) {
                 return o1.compareTo(o2);
-                // 0 -> if both are equal
-                // 1 -> if o1 > o2
-                //-1 -> if o1 < o2
             }
         };
 
