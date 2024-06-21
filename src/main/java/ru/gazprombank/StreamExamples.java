@@ -13,12 +13,15 @@ public class StreamExamples {
     public static void main(String[] args) {
 
         // 1. Варианты создания стрима
-        List<String> list = Arrays.asList("a", "b", "c", "d");
+        final List<String> list = Arrays.asList("a", "b", "c", "d");
         final Stream<String> streamFromList = list.stream();
         final Stream<String> streamFromArray = Stream.of("a", "b", "c", "d");
 
+
+
         // 2. Промежуточные операции
-        List<String> list2 = Arrays.asList("apple", "banana", "cherry", "date");
+        final List<String> list2 = Arrays.asList("apple", "banana", "cherry", "date");
+
 
         final List<String> result2 = list2.stream()
                 .filter(s -> s.startsWith("b"))
@@ -26,6 +29,8 @@ public class StreamExamples {
                 .collect(Collectors.toList());
 
         System.out.println(result2);
+
+
 
         // 3. Сортировка и ограничение результатов
         final List<Integer> list3 = Arrays.asList(5, 2, 8, 1, 3);
@@ -36,6 +41,8 @@ public class StreamExamples {
                 .collect(Collectors.toList());
 
         System.out.println(result3);
+
+
 
         // 4. Терминальные операции: forEach, collect, reduce
         final List<String> list4 = Arrays.asList("apple", "banana", "cherry", "apple");
@@ -75,11 +82,12 @@ public class StreamExamples {
 
 
         // Бесконечный стрим
-/*        long count = IntStream
-                .iterate(0, i -> i + 2)
+        long count = IntStream
+                .iterate(0, i -> i + 1)
+                .limit(100)
                 .count();
 
-        System.out.println("Сумма = " + count);*/
+        System.out.println("Сумма = " + count);
     }
 
 }
